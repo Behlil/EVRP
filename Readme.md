@@ -1,13 +1,10 @@
 
-# GVRP-Multitech Dataset
+# GVRP-Multitech 
 
 ## Overview
 The **GVRP-Multitech Dataset** is designed for solving the **Green Vehicle Routing Problem (GVRP)**, a type of Vehicle Routing Problem where the fleet consists of electric vehicles (EVs) with limited battery capacity. This dataset contains details about the locations (nodes), paths (links), vehicle profiles, and delivery requests, including the associated energy consumption and service constraints.
 
-## Files
-- `nGVRP-C101-5.xml`: XML file describing the network of nodes, links, fleet specifications, and delivery requests for a particular instance of the GVRP.
-
-## Structure of the XML File
+## Structure of the XML Files
 
 ### 1. **Instance**
 The root element of the dataset file is `<instance>`. It encapsulates the entire dataset and is subdivided into several key sections: `info`, `network`, `fleet`, and `requests`.
@@ -100,5 +97,4 @@ Example:
 The dataset is intended for research and optimization purposes in green logistics and electric vehicle routing problems. It allows users to simulate vehicle routes that account for delivery constraints, energy consumption, charging needs, and vehicle capacities, providing a realistic challenge for route optimization algorithms.
 
 ## Citation
-Please cite the use of this dataset as follows:
 > Goeke, Dominik (2019), “E-VRPTW instances”, Mendeley Data, V1, doi: 10.17632/h3mrm5dhxw.1
