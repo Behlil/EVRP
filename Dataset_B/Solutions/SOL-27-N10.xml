@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solution instance="27-N10">
+	<route id="1">
+	<cost id="7.936"/>
+		<node id="15"/>
+		<node id="0"/>
+		<node id="1"/>
+		<node id="14"/>
+		<node id="4"/>
+		<node id="15"/>
+	</route> 
+	<route id="2">
+	<cost id="4.65"/>
+		<node id="15"/>
+		<node id="5"/>
+		<node id="7"/>
+		<node id="15"/>
+	</route>   
+	<route id="3">
+	<cost id="4.35"/>
+		<node id="15"/>
+		<node id="2"/>
+		<node id="3"/>
+		<node id="15"/>
+	</route> 
+	<route id="4">
+	<cost id="7.556"/>
+		<node id="15"/>
+		<node id="6"/>
+		<node id="8"/>
+		<node id="9"/>
+		<node id="11"/>
+		<node id="15"/>
+	</route> 
+</solution>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<instance>
+	<info>
+		<dataset>GVRP-multitech</dataset>
+		<name>evrp-data/nGVRP-C206-5</name>
+	</info>
+	<network>
+		<nodes>
+			<node id="0" type="1">
+				<cx>5</cx>
+				<cy>35</cy>
+			</node>
+			<node id="1" type="1">
+				<cx>44</cx>
+				<cy>5</cy>
+			</node>
+			<node id="2" type="1">
+				<cx>32</cx>
+				<cy>20</cy>
+			</node>
+			<node id="3" type="1">
+				<cx>72</cx>
+				<cy>45</cy>
+			</node>
+			<node id="4" type="1">
+				<cx>45</cx>
+				<cy>65</cy>
+			</node>
+			<node id="5" type="2">
+				<cx>40</cx>
+				<cy>50</cy>
+				<custom>
+					<has_tech>1</has_tech>
+				</custom>
+			</node>
+			<node id="6" type="2">
+				<cx>10</cx>
+				<cy>28</cy>
+				<custom>
+					<has_tech>1</has_tech>
+				</custom>
+			</node>
+			<node id="7" type="2">
+				<cx>39</cx>
+				<cy>26</cy>
+				<custom>
+					<has_tech>1</has_tech>
+				</custom>
+			</node>
+			<node id="8" type="2">
+				<cx>61</cx>
+				<cy>14</cy>
+				<custom>
+					<has_tech>1</has_tech>
+				</custom>
+			</node>
+			<node id="9" type="0">
+				<cx>40</cx>
+				<cy>50</cy>
+				<custom>
+					<has_tech>0</has_tech>
+				</custom>
+			</node>
+		</nodes>
+		<links symmetric="true">
+			<link head="0" tail="1">
+				<energy_consumption>50</energy_consumption>
+				<travel_time>50</travel_time>
+			</link>
+			<link head="0" tail="2">
+				<energy_consumption>31</energy_consumption>
+				<travel_time>31</travel_time>
+			</link>
+			<link head="0" tail="3">
+				<energy_consumption>68</energy_consumption>
+				<travel_time>68</travel_time>
+			</link>
+			<link head="0" tail="4">
+				<energy_consumption>50</energy_consumption>
+				<travel_time>50</travel_time>
+			</link>
+			<link head="0" tail="5">
+				<energy_consumption>39</energy_consumption>
+				<travel_time>39</travel_time>
+			</link>
+			<link head="0" tail="6">
+				<energy_consumption>9</energy_consumption>
+				<travel_time>9</travel_time>
+			</link>
+			<link head="0" tail="7">
+				<energy_consumption>36</energy_consumption>
+				<travel_time>36</travel_time>
+			</link>
+			<link head="0" tail="8">
+				<energy_consumption>60</energy_consumption>
+				<travel_time>60</travel_time>
+			</link>
+			<link head="0" tail="9">
+				<energy_consumption>39</energy_consumption>
+				<travel_time>39</travel_time>
+			</link>
+			<link head="1" tail="2">
+				<energy_consumption>20</energy_consumption>
+				<travel_time>20</travel_time>
+			</link>
+			<link head="1" tail="3">
+				<energy_consumption>49</energy_consumption>
+				<travel_time>49</travel_time>
+			</link>
+			<link head="1" tail="4">
+				<energy_consumption>61</energy_consumption>
+				<travel_time>61</travel_time>
+			</link>
+			<link head="1" tail="5">
+				<energy_consumption>46</energy_consumption>
+				<travel_time>46</travel_time>
+			</link>
+			<link head="1" tail="6">
+				<energy_consumption>42</energy_consumption>
+				<travel_time>42</travel_time>
+			</link>
+			<link head="1" tail="7">
+				<energy_consumption>22</energy_consumption>
+				<travel_time>22</travel_time>
+			</link>
+			<link head="1" tail="8">
+				<energy_consumption>20</energy_consumption>
+				<travel_time>20</travel_time>
+			</link>
+			<link head="1" tail="9">
+				<energy_consumption>46</energy_consumption>
+				<travel_time>46</travel_time>
+			</link>
+			<link head="2" tail="3">
+				<energy_consumption>48</energy_consumption>
+				<travel_time>48</travel_time>
+			</link>
+			<link head="2" tail="4">
+				<energy_consumption>47</energy_consumption>
+				<travel_time>47</travel_time>
+			</link>
+			<link head="2" tail="5">
+				<energy_consumption>32</energy_consumption>
+				<travel_time>32</travel_time>
+			</link>
+			<link head="2" tail="6">
+				<energy_consumption>24</energy_consumption>
+				<travel_time>24</travel_time>
+			</link>
+			<link head="2" tail="7">
+				<energy_consumption>10</energy_consumption>
+				<travel_time>10</travel_time>
+			</link>
+			<link head="2" tail="8">
+				<energy_consumption>30</energy_consumption>
+				<travel_time>30</travel_time>
+			</link>
+			<link head="2" tail="9">
+				<energy_consumption>32</energy_consumption>
+				<travel_time>32</travel_time>
+			</link>
+			<link head="3" tail="4">
+				<energy_consumption>34</energy_consumption>
+				<travel_time>34</travel_time>
+			</link>
+			<link head="3" tail="5">
+				<energy_consumption>33</energy_consumption>
+				<travel_time>33</travel_time>
+			</link>
+			<link head="3" tail="6">
+				<energy_consumption>65</energy_consumption>
+				<travel_time>65</travel_time>
+			</link>
+			<link head="3" tail="7">
+				<energy_consumption>39</energy_consumption>
+				<travel_time>39</travel_time>
+			</link>
+			<link head="3" tail="8">
+				<energy_consumption>33</energy_consumption>
+				<travel_time>33</travel_time>
+			</link>
+			<link head="3" tail="9">
+				<energy_consumption>33</energy_consumption>
+				<travel_time>33</travel_time>
+			</link>
+			<link head="4" tail="5">
+				<energy_consumption>16</energy_consumption>
+				<travel_time>16</travel_time>
+			</link>
+			<link head="4" tail="6">
+				<energy_consumption>51</energy_consumption>
+				<travel_time>51</travel_time>
+			</link>
+			<link head="4" tail="7">
+				<energy_consumption>40</energy_consumption>
+				<travel_time>40</travel_time>
+			</link>
+			<link head="4" tail="8">
+				<energy_consumption>54</energy_consumption>
+				<travel_time>54</travel_time>
+			</link>
+			<link head="4" tail="9">
+				<energy_consumption>16</energy_consumption>
+				<travel_time>16</travel_time>
+			</link>
+			<link head="5" tail="6">
+				<energy_consumption>38</energy_consumption>
+				<travel_time>38</travel_time>
+			</link>
+			<link head="5" tail="7">
+				<energy_consumption>25</energy_consumption>
+				<travel_time>25</travel_time>
+			</link>
+			<link head="5" tail="8">
+				<energy_consumption>42</energy_consumption>
+				<travel_time>42</travel_time>
+			</link>
+			<link head="5" tail="9">
+				<energy_consumption>0</energy_consumption>
+				<travel_time>0</travel_time>
+			</link>
+			<link head="6" tail="7">
+				<energy_consumption>30</energy_consumption>
+				<travel_time>30</travel_time>
+			</link>
+			<link head="6" tail="8">
+				<energy_consumption>53</energy_consumption>
+				<travel_time>53</travel_time>
+			</link>
+			<link head="6" tail="9">
+				<energy_consumption>38</energy_consumption>
+				<travel_time>38</travel_time>
+			</link>
+			<link head="7" tail="8">
+				<energy_consumption>26</energy_consumption>
+				<travel_time>26</travel_time>
+			</link>
+			<link head="7" tail="9">
+				<energy_consumption>25</energy_consumption>
+				<travel_time>25</travel_time>
+			</link>
+			<link head="8" tail="9">
+				<energy_consumption>42</energy_consumption>
+				<travel_time>42</travel_time>
+			</link>
+		</links>
+	</network>
+	<fleet>
+		<vehicle_profile type="0" number="1">
+			<departure_node>9</departure_node>
+			<arrival_node>9</arrival_node>
+			<capacity>700</capacity>
+			<max_travel_time>3390</max_travel_time>
+			<custom>
+				<battery_capacity>77</battery_capacity>
+				<charging_techs>
+					<function has_tech="0">
+						<gamma>1</gamma>
+						<rho>0</rho>
+					</function>
+					<function has_tech="1">
+						<gamma>1</gamma>
+						<rho>3.47001</rho>
+					</function>
+				</charging_techs>
+			</custom>
+		</vehicle_profile>
+	</fleet>
+	<requests>
+		<request id="0" node="0">
+			<quantity>10</quantity>
+			<service_time>90</service_time>
+		</request>
+		<request id="1" node="1">
+			<quantity>20</quantity>
+			<service_time>90</service_time>
+		</request>
+		<request id="2" node="2">
+			<quantity>10</quantity>
+			<service_time>90</service_time>
+		</request>
+		<request id="3" node="3">
+			<quantity>10</quantity>
+			<service_time>90</service_time>
+		</request>
+		<request id="4" node="4">
+			<quantity>20</quantity>
+			<service_time>90</service_time>
+		</request>
+		<request id="5" node="5">
+			<quantity>0</quantity>
+			<service_time>0</service_time>
+		</request>
+		<request id="6" node="6">
+			<quantity>0</quantity>
+			<service_time>0</service_time>
+		</request>
+		<request id="7" node="7">
+			<quantity>0</quantity>
+			<service_time>0</service_time>
+		</request>
+		<request id="8" node="8">
+			<quantity>0</quantity>
+			<service_time>0</service_time>
+		</request>
+		<request id="9" node="9">
+			<quantity>0</quantity>
+			<service_time>0</service_time>
+		</request>
+	</requests>
+</instance>
+

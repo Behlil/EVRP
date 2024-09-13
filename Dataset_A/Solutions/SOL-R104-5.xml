@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solution instance="R104-5">
+	<route id="1">
+	<cost id="59"/>
+		<node id="8"/>
+		<node id="3"/>
+		<node id="4"/>
+		<node id="2"/>
+		<node id="8"/>
+	</route> 
+	<route id="2">
+	<cost id="83"/>
+		<node id="8"/>
+		<node id="1"/>
+		<node id="0"/>
+		<node id="6"/>
+		<node id="8"/>
+	</route> 
+</solution>
