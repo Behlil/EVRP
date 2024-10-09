@@ -38,38 +38,13 @@ class Request:
         self.quantity = quantity
         self.service_time = service_time
 
-
 class GVRP:
     def __init__(self, xml_file):
-        self.xml_file = xml_file
         self.nodes = {}
         self.links = {}
         self.vehicles = []
         self.requests = {}
         self.parse_xml(xml_file)
-        self.num_vehicles = len(self.vehicles)
-        
-    def test_with_vehicles(self, num_vehicles):
-        """
-        Teste la solution avec un nombre donné de véhicules.
-        """
-        # parse the xml file
-        self.parse_xml(self.xml_file)
-        print(f"\nTest avec {num_vehicles} véhicule(s) :")
-        # Limiter le nombre de véhicules à utiliser
-        self.vehicles = self.vehicles[:num_vehicles]  # Utiliser les premiers "num_vehicles" véhicules
-        best_solution, best_cost = self.simulated_annealing()
-        return best_solution, best_cost
-
-    def compare_solutions(self, num_vehicles):
-        """
-        Compare les solutions avec un nombre différent de véhicules.
-        """
-        results = {}
-        for i in range(1, num_vehicles + 1):
-            solution, cost = self.test_with_vehicles(i)
-            results[i] = {'solution': solution, 'cost': cost}
-        return results
 
     
 
@@ -169,7 +144,7 @@ class GVRP:
     def generate_initial_solution(self):
         depots = [node.id for node in self.nodes.values() if node.type == 0]
         Charging_stations = [node.id for node in self.nodes.values() if node.type == 2]
-        print(depots)
+        # print(depots)
         solution = []
         unvisited = list(self.requests.keys())
         for vehicle in self.vehicles:
@@ -228,9 +203,8 @@ class GVRP:
         charging_stations = [node.id for node in self.nodes.values() if node.type == 2]
         charging_stations_in_solution = [node for route in new_solution for node in route if node in charging_stations]
         charging_stations = [node for node in charging_stations if node not in charging_stations_in_solution]
-        
-        for i in range(len(new_solution) ):
-            
+
+        for i in range(len(new_solution)):
             route = new_solution[i]
             if len(route) <= 2:
                 continue  # Skip depot-only routes
@@ -243,13 +217,11 @@ class GVRP:
                     break
 
             route[node1], route[node2] = route[node2], route[node1]
-            #if the new solution is not valid and not the same as the old one, swap back
+            #if the new solution is not valid or  the same as the old one, swap back
             while not self.is_valid_route(route, self.vehicles[0]) or route == solution[i]:
                 route[node1], route[node2] = route[node2], route[node1]
                 node1, node2 = random.sample(range(1, len(route)-1), 2)
-                route[node1], route[node2] = route[node2], route[node1]
-                # try adding a charging station between two nodes
-                
+                route[node1], route[node2] = route[node2], route[node1]                
 
             # if the new solution is not valid, add a charging station between two nodes
             if not self.is_valid_route(route, self.vehicles[0]):
@@ -264,6 +236,17 @@ class GVRP:
                         route.remove(Charging_station)
                         charging_stations.append(Charging_station)
 
+        # try to swap nodes between two routes
+        while True:
+            route1, route2 = random.sample(range(len(new_solution)), 2)
+            node1 = random.randint(1, len(new_solution[route1])-2)
+            node2 = random.randint(1, len(new_solution[route2])-2)
+            new_solution[route1][node1], new_solution[route2][node2] = new_solution[route2][node2], new_solution[route1][node1]
+            if self.is_valid_route(new_solution[route1], self.vehicles[0]) and self.is_valid_route(new_solution[route2], self.vehicles[0]):
+                break
+            else:
+                new_solution[route1][node1], new_solution[route2][node2] = new_solution[route2][node2], new_solution[route1][node1]
+
 
             
 
@@ -271,7 +254,7 @@ class GVRP:
         # print("new solution", new_solution)
         return new_solution
 
-    def simulated_annealing(self, initial_temp=100000, cooling_rate=999999/1000.0, iterations=10000000, final_temp=0.0001):
+    def simulated_annealing(self, initial_temp=100000, cooling_rate=9999/1000.0, iterations=1000000, final_temp=0.0001):
         try:
             current_solution = self.generate_initial_solution()
             current_cost = self.objective_function(current_solution)
@@ -335,18 +318,11 @@ class GVRP:
 
 # Usage
 if __name__ == "__main__":
-    gvrp = GVRP('C:/Users/lenovo/Downloads/PFE/projet/Dataset_A/Instances/C103-15.xml')
-    
-    # Comparer les solutions avec 1, 2 et 3 véhicules (ou plus selon vos besoins)
-    vehicle_counts = gvrp.num_vehicles
-    comparison_results = gvrp.compare_solutions(vehicle_counts)
-
-    # Affichage des meilleures solutions et coûts pour chaque nombre de véhicules
-    for count, result in comparison_results.items():
-        print(f"\nSolution avec {count} véhicule(s) : {result['solution']}")
-        print(f"Coût : {result['cost']}")
-
-    # Tracer la solution avec le meilleur coût
-    min_vehicles = min(comparison_results, key=lambda x: comparison_results[x]['cost'])
-    print(f"\nMeilleure solution avec {min_vehicles} véhicule(s), coût : {comparison_results[min_vehicles]['cost']}")
-    gvrp.plot_solution(comparison_results[min_vehicles]['solution'])
+    gvrp = GVRP('C:/Users/lenovo/Downloads/PFE/projet/Dataset_A/Instances/C101-5.xml')
+    best_solution, best_cost = gvrp.simulated_annealing()
+    print(f"Best solution: {best_solution}")
+    print(f"Best cost: {best_cost}")
+    # calculate this cost
+    # route = [[14, 5, 2, 13, 4, 7, 14], [14, 0, 8, 6, 11, 1, 12, 9, 3, 14]]
+    # print("meilleure: ", gvrp.objective_function([route]))
+    gvrp.plot_solution(best_solution)

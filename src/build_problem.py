@@ -23,6 +23,28 @@ class Node:
                 node_links.append(link)
         return node_links
 
+    def get_nearest_node(self, nodes):
+        nearest_node = None
+        min_distance = float('inf')
+        for node in nodes.values():
+            if node == self:
+                continue
+            distance = ((self.x - node.x)**2 + (self.y - node.y)**2)**0.5
+            if distance < min_distance:
+                min_distance = distance
+                nearest_node = node
+        return nearest_node
+
+    def get_nearest_nodes_ordered(self, nodes):
+        nearest_nodes = []
+        for i in range(len(nodes)):
+            nearest_node = self.get_nearest_node(nodes)
+            nearest_nodes.append(nearest_node)
+            nodes.remove(nearest_node)
+        return nearest_nodes
+
+    
+
     
 
 
@@ -42,6 +64,8 @@ class Customer(Node):
             if request.node_id == self.node_id:
                 return request.service_time
         return 0
+
+
 
 
 
@@ -150,10 +174,14 @@ class Vehicule:
             if link.first_node == self.current_node and link.second_node == node:
                 break
 
+        if self.current_battery - link.energy_consumption < 0:
+            return False
 
         self.current_travel_time += link.travel_time
         self.current_battery -= link.energy_consumption
         self.current_node = node
+
+        return True
 
     def travel_to_nodes(self, nodes, links):
         for node in nodes:
@@ -163,7 +191,7 @@ class Vehicule:
             if self.current_battery < 0:
                 return False
         return True
-    def enought_battery_between_2_nodes(self, node1, node2):
+    def enought_battery(self, node1, node2):
         link = Link(node1, node2)
         if self.current_battery - link.energy_consumption < 0:
             return False
@@ -174,6 +202,17 @@ class Vehicule:
             if not self.enought_battery_between_2_nodes(path[i], path[i+1]):
                 return False
         return True
+
+    def nearest_charging_station(self, nodes):
+        nearest_station = None
+        min_distance = float('inf')
+        for node in nodes.values():
+            if isinstance(node, ChargingStation):
+                distance = ((self.current_node.x - node.x)**2 + (self.current_node.y - node.y)**2)**0.5
+                if distance < min_distance:
+                    min_distance = distance
+                    nearest_station = node
+        return nearest_station
                 
    
 class Request:
